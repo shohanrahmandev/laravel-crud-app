@@ -11,18 +11,34 @@
 </head>
 
 <body>
-    <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+    <form action="index.php">
+        <div style="width: 50%;margin:auto;margin-top:10%;">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email:</label>
+                <div class="col-sm-3">
+                    <input type="date" class="form-control" id="date" placeholder="Enter date">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">List:</label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Remember me</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword">
-        </div>
-    </div>
+    </form>
 </body>
 
 </html>

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <table class="table" style="width: 50%;margin:auto;">
+    <table class="table" style="width: 50%;margin:auto;margin-top:10%;">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Id</th>
