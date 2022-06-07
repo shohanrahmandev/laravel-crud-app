@@ -22,7 +22,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="pwd">List:</label>
                 <div class="col-sm-5">
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter List">
                 </div>
             </div>
             <div class="form-group">
