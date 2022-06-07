@@ -19,7 +19,7 @@
 
             <h1 class="d-flex justify-content-center mt-5 p-5"> Crud Insert App </h1>
 
-            <form class=" border shadow-lg p-3 mb-5 bg-body rounded">
+            <form class=" border shadow-lg p-3 mb-5 bg-body rounded" action="index.php">
                 <div class="mb-3 col-1">
                     <label for="id" class="form-label"> ID : </label>
                     <input type="number" class="form-control" id="exampleInputid">

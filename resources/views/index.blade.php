@@ -17,7 +17,7 @@
                 <h1> Crud App</h1>
             </div>
 
-            <table class="table table-striped border shadow-lg p-3 mb-5 bg-body rounded ">
+            <table class="table table-striped border shadow-lg p-5 mb-5 bg-body rounded ">
                 <thead class="table-success">
                     <tr>
                         <th scope="col">Id</th>
