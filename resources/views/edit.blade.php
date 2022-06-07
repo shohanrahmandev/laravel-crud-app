@@ -17,30 +17,32 @@
 
         <section style="width: 30%;">
 
-            <h1 class="d-flex justify-content-center mt-5 p-5"> Crud Insert App </h1>
+            <h1 class="d-flex justify-content-center mt-5 p-5"> Crud Update App </h1>
 
             <form class=" border shadow-lg p-3 mb-5 bg-body rounded">
                 <div class="mb-3 col-1">
                     <label for="id" class="form-label"> ID : </label>
                     <input type="number" class="form-control" id="exampleInputid">
                 </div>
-                <hr>
+                <hr class="text-danger border-2 opacity-100">
                 <div class="mb-3 col-3">
                     <label for="date" class="form-label">Date :</label>
                     <input type="date" class="form-control" id="date">
                 </div>
-                <hr>
+                <hr class="text-danger border-2 opacity-100">
                 <div class="mb-3 col-5">
                     <label for="text" class="form-label">List Food :</label>
                     <input type="text" class="form-control" id="text">
                 </div>
-                <hr>
+                <hr class="text-danger border-2 opacity-100">
 
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
-                <button type="submit" class="btn btn-success">Submit</button>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success  ">Update</button>
+                </div>
             </form>
 
         </section>
