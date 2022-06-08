@@ -31,6 +31,8 @@
                     <th>Email</th>
                     <th>Password</th>
                     <th>Website</th>
+                    <th>Edit</th>
+                    <th>Delate</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,6 +45,12 @@
                     <td>{{ $tudu->email }}</td>
                     <td>{{ $tudu->password }}</td>
                     <td>{{ $tudu->website }}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-success">Edit</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-outline-warning">Delete</button>
+                    </td>
                 </tr>
 
                 @endforeach

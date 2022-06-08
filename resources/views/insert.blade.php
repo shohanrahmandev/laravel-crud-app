@@ -24,7 +24,7 @@
             <form class=" border shadow-lg p-3 mb-5 bg-body rounded" action="/save">
 
                 <hr>
-                <div class="mb-3 col-3">
+                <div class="mb-3 col-5">
                     <label for="email" class="form-label">Email :</label>
                     <input type="email" class="form-control" name="email" id="email">
                 </div>
