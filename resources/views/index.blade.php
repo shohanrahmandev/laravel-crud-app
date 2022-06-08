@@ -16,7 +16,12 @@
             <div class="d-flex justify-content-center mt-5 p-5">
                 <h1> Crud App</h1>
             </div>
-            <a href="/create">create</a>
+            <h4 class="text-center text-capitalize">
+                <a href="/homework" class="btn btn-success">Homework</a>
+            </h4>
+            <h4 class="text-center text-capitalize">
+                <a href="/create" class="btn btn-success">Create</a>
+            </h4>
             <table class="table table-striped border shadow-lg p-5 mb-5 bg-body rounded ">
                 <thead class="table-success">
                     <tr>
@@ -52,50 +57,7 @@
             </table>
         </section>
     </div>
-    <div class="d-flex justify-content-center mt-5 p-5">
-        <section style="width:50%;">
-            <div class="d-flex justify-content-center mt-5 p-5">
-                <h1> Crud App</h1>
-            </div>
-            <a href="/create">create</a>
-            <table class="table table-striped border shadow-lg p-5 mb-5 bg-body rounded ">
-                <thead class="table-success">
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">List Food</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
 
-                    @foreach ( $todos as $todo )
-
-
-                    <tr>
-                        <th scope="row">
-                            {{ $todo->id }}
-                        </th>
-                        <td>
-                            {{ $todo->name }}
-                        </td>
-                        <td>
-                            {{ $todo->food }}
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-outline-success">Edit</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-outline-warning">Delete</button>
-                        </td>
-                    </tr>
-                    @endforeach
-
-                </tbody>
-            </table>
-        </section>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>

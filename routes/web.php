@@ -21,11 +21,6 @@ Route::get('/', function () {
     return view('index')->with('todos', $todos);
 });
 
-Route::get('/', function () {
-    $tudu = DB::table('todos')->get();
-    return view('index')->with('todos', $tudu);
-});
-
 Route::get('/create', function () {
     return view('create');
 });
@@ -44,4 +39,27 @@ Route::get('/store', function (Request $request) {
     ]);
 
     return redirect('/');
+});
+
+Route::get('/homework', function () {
+    $tudus = DB::table('insert')->get();
+
+    return view('homework')->with('tudus', $tudus);
+});
+
+Route::get('/insert', function () {
+    return view('insert');
+});
+
+
+Route::get('/save', function (Request $request) {
+    //return $request->all();
+
+    DB::table('insert')->insert([
+        'email' => $request->email,
+        'password' => $request->password,
+        'website' => $request->website
+    ]);
+
+    return redirect('homework');
 });
