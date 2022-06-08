@@ -16,7 +16,7 @@
             <div class="d-flex justify-content-center mt-5 p-5">
                 <h1> Crud App</h1>
             </div>
-
+            <a href="/create">create</a>
             <table class="table table-striped border shadow-lg p-5 mb-5 bg-body rounded ">
                 <thead class="table-success">
                     <tr>
@@ -28,15 +28,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($todos as $todo)
                     <tr>
                         <th scope="row">
-                            1
+                            {{ $todo->id }}
                         </th>
                         <td>
-                            5/6/2022
+                            {{ $todo->date }}
                         </td>
                         <td>
-                            Egg , potato
+                            {{ $todo->food }}
                         </td>
                         <td>
                             <button type="button" class="btn btn-outline-success">Edit</button>
@@ -45,15 +46,42 @@
                             <button type="button" class="btn btn-outline-warning">Delete</button>
                         </td>
                     </tr>
+                    @endforeach
+
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <div class="d-flex justify-content-center mt-5 p-5">
+        <section style="width:50%;">
+            <div class="d-flex justify-content-center mt-5 p-5">
+                <h1> Crud App</h1>
+            </div>
+            <a href="/create">create</a>
+            <table class="table table-striped border shadow-lg p-5 mb-5 bg-body rounded ">
+                <thead class="table-success">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">List Food</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach ( $todos as $todo )
+
+
                     <tr>
                         <th scope="row">
-                            2
+                            {{ $todo->id }}
                         </th>
                         <td>
-                            6/6/2022
+                            {{ $todo->name }}
                         </td>
                         <td>
-                            Vagetable
+                            {{ $todo->food }}
                         </td>
                         <td>
                             <button type="button" class="btn btn-outline-success">Edit</button>
@@ -62,23 +90,8 @@
                             <button type="button" class="btn btn-outline-warning">Delete</button>
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row">
-                            3
-                        </th>
-                        <td>
-                            7/6/2022
-                        </td>
-                        <td>
-                            Chicken
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-outline-success">Edit</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-outline-warning">Delete</button>
-                        </td>
-                    </tr>
+                    @endforeach
+
                 </tbody>
             </table>
         </section>

@@ -19,27 +19,28 @@
 
             <h1 class="d-flex justify-content-center mt-5 p-5"> Crud Insert App </h1>
 
-            <form class=" border shadow-lg p-3 mb-5 bg-body rounded" action="index.php">
-                <div class="mb-3 col-1">
-                    <label for="id" class="form-label"> ID : </label>
-                    <input type="number" class="form-control" id="exampleInputid">
-                </div>
+
+
+            <form class=" border shadow-lg p-3 mb-5 bg-body rounded" action="/store">
+
                 <hr>
                 <div class="mb-3 col-3">
                     <label for="date" class="form-label">Date :</label>
-                    <input type="date" class="form-control" id="date">
+                    <input type="date" class="form-control" name="date" id="date">
                 </div>
                 <hr>
                 <div class="mb-3 col-5">
-                    <label for="text" class="form-label">List Food :</label>
-                    <input type="text" class="form-control" id="text">
+                    <label for="name" class="form-label"> Name : </label>
+                    <input type="text" name="name" class="form-control" id="name">
+                </div>
+                <hr>
+                <div class="mb-3 col-5">
+                    <label for="list-food" class="form-label">List Food :</label>
+                    <input type="text" name="food" class="form-control" id="list-food">
                 </div>
                 <hr>
 
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
+
                 <button type="submit" class="btn btn-success">Submit</button>
             </form>
 

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $todos = DB::table('todos')->get();
+
+    return view('index')->with('todos', $todos);
+});
+
+Route::get('/', function () {
+    $tudu = DB::table('todos')->get();
+    return view('index')->with('todos', $tudu);
 });
 
 Route::get('/create', function () {
@@ -23,4 +32,16 @@ Route::get('/create', function () {
 
 Route::get('/edit', function () {
     return view('edit');
+});
+
+Route::get('/store', function (Request $request) {
+    // return $request->all();
+
+    DB::table('todos')->insert([
+        'date' => $request->date,
+        'name' => $request->name,
+        'food' => $request->food
+    ]);
+
+    return redirect('/');
 });
