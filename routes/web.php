@@ -1,9 +1,11 @@
 <?php
 
+use index;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,51 +18,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $todos = Todo::all();
+Route::get('/', [TodoController::class, 'index']);
 
-    return view('index')->with('todos', $todos);
-});
+Route::get('/create', [TodoController::class, 'create']);
 
-Route::get('/create', function () {
-    return view('create');
-});
+Route::get('/edit/{id}', [TodoController::class, 'edit']);
 
+Route::get('/update/{id}', [TodoController::class, 'update']);
 
+Route::get('/delete/{id}', [TodoController::class, 'delete']);
 
-Route::get('/edit/{id}', function ($id) {
-
-    $todos = Todo::find($id);
-
-    return view('edit')->with('todo', $todos);
-});
-
-Route::get('/update/{id}', function ($id, Request $request) {
-
-    Todo::where('id', $id)
-        ->update([
-            'date' => $request->date,
-            'name' => $request->name,
-            'food' => $request->food
-        ]);
-
-    return redirect('/');
-});
-
-Route::get('/delete/{id}', function ($id) {
-
-    $todos = Todo::where('id', $id)->delete();
-
-    return redirect('/');
-});
-
-Route::get('/store', function (Request $request) {
-    // return $request->all();
-
-    Todo::create($request->all());
-
-    return redirect('/');
-});
+Route::get('/store', [TodoController::class, 'store']);
 
 //home work section
 
