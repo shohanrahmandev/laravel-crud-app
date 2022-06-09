@@ -6,53 +6,75 @@ use App\Models\Todo;
 use Illuminate\Http\Request;
 
 class TodoController extends Controller
-
-
 {
-    /***
-     * index file fucntion
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $todos = Todo::all();
-
-        return  view('index')->with('todos', $todos);
+        return  view('index')->with('todos', Todo::all());
     }
 
-    /**create */
-
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
+
         return view('create');
     }
 
-    /**edit */
-
-    public function edit($id)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        $todos = Todo::find($id);
+        Todo::create($request->all());
 
-        return view('edit')->with('todo', $todos);
+        return redirect('/');
     }
-    /**update */
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Todo  $todo
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Todo $todo)
+    {
+
+        return view('edit', ['todo' => $todo]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Todo  $todo
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, Todo $todo)
     {
-
         $todo->update($request->all());
         return redirect('/');
     }
-    /**delete */
-    public function delete($id)
-    {
-        $todos = Todo::where('id', $id)->delete();
 
-        return redirect('/');
-    }
-    /***store */
-    public function store(Request $request, Todo $todo)
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Todo  $todo
+     * @return \Illuminate\Http\Response
+     */
+    public function delete(Todo $todo)
     {
-        $todo->create($request->all());
+        $todo->delete();
 
         return redirect('/');
     }

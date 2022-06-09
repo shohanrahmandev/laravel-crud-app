@@ -1,6 +1,5 @@
 <?php
 
-use index;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -22,11 +21,11 @@ Route::get('/', [TodoController::class, 'index']);
 
 Route::get('/create', [TodoController::class, 'create']);
 
-Route::get('/edit/{id}', [TodoController::class, 'edit']);
+Route::get('/edit/{todo}', [TodoController::class, 'edit']);
 
-Route::get('/update/{id}', [TodoController::class, 'update']);
+Route::get('/update/{todo}', [TodoController::class, 'update']);
 
-Route::get('/delete/{id}', [TodoController::class, 'delete']);
+Route::get('/delete/{todo}', [TodoController::class, 'delete']);
 
 Route::get('/store', [TodoController::class, 'store']);
 
