@@ -27,6 +27,7 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Date</th>
+                        <th scope="col">Nmae</th>
                         <th scope="col">List Food</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
@@ -42,13 +43,16 @@
                             {{ $todo->date }}
                         </td>
                         <td>
+                            {{ $todo->name }}
+                        </td>
+                        <td>
                             {{ $todo->food }}
                         </td>
                         <td>
-                            <button type="button" class="btn btn-outline-success">Edit</button>
+                            <a href="/edit/{{ $todo->id }}" type="button" class="btn btn-outline-success">Edit</a>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-outline-warning">Delete</button>
+                            <a href="/delete/{{ $todo->id }}" type="button" class="btn btn-outline-warning">Delete</a>
                         </td>
                     </tr>
                     @endforeach
