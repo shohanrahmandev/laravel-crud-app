@@ -52,8 +52,11 @@
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Save</button>
+                                        <button type="button" class="btn btn-dark"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-success">Save</button>
                                     </div>
+
                                 </form>
                             </div>
                         </div>
@@ -65,7 +68,7 @@
             <table class="table table-striped border shadow-lg p-5 mb-5 bg-body rounded ">
                 <thead class="table-success">
                     <tr>
-                        <th scope="col">Id</th>
+                        <th scope="col">check</th>
                         <th scope="col">Date</th>
                         <th scope="col">Nmae</th>
                         <th scope="col">List Food</th>
@@ -77,7 +80,7 @@
                     @foreach ($todos as $todo)
                     <tr>
                         <th scope="row">
-                            {{ $todo->id }}
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         </th>
                         <td>
                             {{ $todo->date }}
@@ -89,7 +92,9 @@
                             {{ $todo->food }}
                         </td>
                         <td>
+
                             <a href="/edit/{{ $todo->id }}" type="button" class="btn btn-outline-success">Edit</a>
+
                         </td>
                         <td>
                             <a href="/delete/{{ $todo->id }}" type="button" class="btn btn-outline-warning">Delete</a>
@@ -97,10 +102,18 @@
                     </tr>
                     @endforeach
 
+
                 </tbody>
             </table>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Save
+            </button>
+
         </section>
     </div>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
