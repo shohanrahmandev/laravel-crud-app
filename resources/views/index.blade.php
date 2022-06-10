@@ -65,50 +65,76 @@
             </div>
 
             <!--table-->
-            <table class="table table-striped border shadow-lg p-5 mb-5 bg-body rounded ">
-                <thead class="table-success">
-                    <tr>
-                        <th scope="col">check</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Nmae</th>
-                        <th scope="col">List Food</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($todos as $todo)
-                    <tr>
-                        <th scope="row">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        </th>
-                        <td>
-                            {{ $todo->date }}
-                        </td>
-                        <td>
-                            {{ $todo->name }}
-                        </td>
-                        <td>
-                            {{ $todo->food }}
-                        </td>
-                        <td>
+            <form action="/status-update">
 
-                            <a href="/edit/{{ $todo->id }}" type="button" class="btn btn-outline-success">Edit</a>
+                <table class="table table-striped border shadow-lg p-5 mb-5 bg-body rounded ">
+                    <thead class="table-success">
+                        <tr>
+                            <th scope="col">check</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Nmae</th>
+                            <th scope="col">List Food</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($todos as $todo)
+                        <tr>
+                            <th scope="row">
+                                <input class="form-check-input" type="checkbox" name="status[{{ $todo->id }}]"
+                                    {{$todo->complete?'checked':'' }}value="1" id="flexCheckDefault">
+                            </th>
+                            @if ($todo->complete)
 
-                        </td>
-                        <td>
-                            <a href="/delete/{{ $todo->id }}" type="button" class="btn btn-outline-warning">Delete</a>
-                        </td>
-                    </tr>
-                    @endforeach
+                            <td>
+                                <del>{{ $todo->date }}</del>
+                            </td>
+                            <td>
+                                <del>{{ $todo->name }}</del>
+                            </td>
+                            <td>
+                                <del>{{ $todo->food }}</del>
+                            </td>
+
+                            @else
+
+                            <td>
+                                {{ $todo->date }}
+                            </td>
+                            <td>
+                                {{ $todo->name }}
+                            </td>
+                            <td>
+                                {{ $todo->food }}
+                            </td>
+
+                            @endif
+                            <td>
+
+                                <a href="/edit/{{ $todo->id }}" type="button" class="btn btn-outline-success">Edit</a>
+
+                            </td>
+                            <td>
+                                <a href="/delete/{{ $todo->id }}" type="button"
+                                    class="btn btn-outline-warning">Delete</a>
+                            </td>
+                        </tr>
+                        @endforeach
 
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Save
-            </button>
+                <div class="text-center">
+
+                    <button type="button" class="btn btn-success">
+                        Save
+                    </button>
+
+                </div>
+
+            </form>
 
         </section>
     </div>

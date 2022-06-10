@@ -29,6 +29,10 @@ Route::get('/delete/{todo}', [TodoController::class, 'delete']);
 
 Route::get('/store', [TodoController::class, 'store']);
 
+
+Route::get('/status-update', [TodoController::class, 'statusUpdate']);
+
+
 //home work section
 
 Route::get('/homework', function () {

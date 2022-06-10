@@ -78,4 +78,27 @@ class TodoController extends Controller
 
         return redirect('/');
     }
+
+    /**
+     * todo status update
+     */
+
+    public function statusUpdate(Request $request)
+    {
+        $todos = Todo::all();
+
+        foreach ($todos as $todo) {
+            if (array_key_exists($todo->id, $request->complete)) {
+                $todo->update([
+                    'complete' => \true,
+                ]);
+            } else {
+                $todo->update([
+                    'complete' => \false
+                ]);
+            }
+        }
+
+        return \redirect('/');
+    }
 }
